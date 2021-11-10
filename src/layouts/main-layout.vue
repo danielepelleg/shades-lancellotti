@@ -30,6 +30,10 @@
             flat
           />
         </template>
+        <q-space v-else />
+
+        <q-separator vertical class="q-mx-lg" dark inset />
+        <q-btn label="Logout" flat @click="logout" />
       </q-toolbar>
     </q-header>
 
@@ -53,13 +57,23 @@
 </template>
 
 <script lang="ts">
+import { isLoggedIn } from 'src/models/login';
 import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'MainLayout',
   setup() {
     const showDrawer = ref(false);
-    return { showDrawer };
+    const router = useRouter();
+
+    function logout() {
+      isLoggedIn.value = false;
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      router.push('/login');
+    }
+
+    return { showDrawer, logout };
   },
 });
 </script>

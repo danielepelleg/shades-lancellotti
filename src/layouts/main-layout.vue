@@ -12,8 +12,14 @@
           Very shades, such wow, much professional
         </q-toolbar-title>
 
-        <q-btn stretch label="Shades" to="/shades" flat />
-        <q-btn stretch label="Locations" to="/locations" flat />
+        <q-btn stretch icon="window" label="Shades" to="/shades" flat />
+        <q-btn
+          stretch
+          icon="thermostat"
+          label="Locations"
+          to="/locations"
+          flat
+        />
       </q-toolbar>
     </q-header>
     <q-page-container>

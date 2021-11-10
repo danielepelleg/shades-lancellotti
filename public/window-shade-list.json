@@ -1,0 +1,56 @@
+{
+  "mqttTopic": "home/+/tapparelle/#",
+  "mqttUrl": "mqtt://cherilee",
+  "shades": [
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Est Camera Riccardo",
+      "topic": "home/diamond-tiara/tapparelle/fin_cameraRL_E"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Ovest Camera Riccardo",
+      "topic": "home/diamond-tiara/tapparelle/fin_cameraRL_W"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Porta Terrazzo Camera Riccardo",
+      "topic": "home/diamond-tiara/tapparelle/fin_cameraRL_Terrazzo"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Studio Riccardo",
+      "topic": "home/diamond-tiara/tapparelle/fin_studioRL"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Camera Luciana",
+      "topic": "home/silver-spoon/tapparelle/fin_cameraL"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Studio Luciana",
+      "topic": "home/silver-spoon/tapparelle/fin_studioL"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Porta Terrazzo Scala",
+      "topic": "home/silver-spoon/tapparelle/fin_scala"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Nord-Est Sala",
+      "topic": "home/snips/tapparelle/fin_sala_NE"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Sud-Est Sala",
+      "topic": "home/snips/tapparelle/fin_sala_SE"
+    },
+    {
+      "url": "stubs/shades",
+      "name": "Finestra Cucina",
+      "topic": "home/snips/tapparelle/fin_cucina"
+    }
+  ]
+}

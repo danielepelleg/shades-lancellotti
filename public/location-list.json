@@ -1,0 +1,22 @@
+[
+  {
+    "url": "stubs/locations/cameraL.json",
+    "name": "Camera Luciana"
+  },
+  {
+    "url": "stubs/locations/cameraRL.json",
+    "name": "Camera Riccardo"
+  },
+  {
+    "url": "stubs/locations/studioRL.json",
+    "name": "Studio Riccardo"
+  },
+  {
+    "url": "stubs/locations/studioL.json",
+    "name": "Studio Luciana"
+  },
+  {
+    "url": "stubs/locations/scala.json",
+    "name": "Scala"
+  }
+]

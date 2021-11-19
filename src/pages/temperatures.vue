@@ -1,19 +1,19 @@
 <template>
   <q-layout>
-    <q-header elevated class="bg-cyan-8">
+    <q-header elevated class="bg-red-8">
       <q-toolbar>
+        <!-- <q-avatar rounded text-color="white" size="50px" icon="thermostat" /> -->
         <q-btn flat round dense icon="menu" @click="drawer = !drawer; button = !button" />
-        <!-- <q-avatar rounded text-color="white" size="50px" icon="window" /> -->
-        <q-toolbar-title> Finestre </q-toolbar-title>
+        <q-toolbar-title> Temperatures </q-toolbar-title>
         <q-space />
         <q-btn
           v-show="button"
           outline
           rounded
+          icon="window"
           color="white"
-          icon="thermostat"
-          label="Temperatures"
-          @click="$router.replace('/temperatures')"
+          label="Windows"
+          @click="$router.replace('/')"
         />
       </q-toolbar>
     </q-header>
@@ -25,7 +25,7 @@
       >
         <q-scroll-area class="fit" style="border-right: 1px solid #ddd">
           <q-list padding class="menu-list">
-            <q-item active clickable>
+            <q-item clickable @click="$router.replace('/')">
               <q-item-section avatar>
                 <q-icon name="window" />
               </q-item-section>
@@ -35,7 +35,7 @@
               </q-item-section>
             </q-item>
 
-            <q-item clickable @click="$router.replace('/temperatures')">
+            <q-item active clickable >
               <q-item-section avatar >
                 <q-icon name="thermostat" />
               </q-item-section>
@@ -51,10 +51,10 @@
     <q-page-container>
       <q-page class="column">
         <q-list separator>
-          <window-shade-item
-            v-for="windowShade in windowShades"
-            :key="windowShade.name"
-            :window-shade="windowShade"
+          <location-item
+            v-for="location in locations"
+            :key="location.name"
+            :location="location"
           />
         </q-list>
       </q-page>
@@ -63,23 +63,26 @@
 </template>
 
 <script lang="ts">
-import { WindowShadeEndpoint } from 'src/models/window-shade';
+
+
+import { LocationEndpoint } from 'src/models/location';
+import LocationItem from 'src/components/location-item.vue';
 import { defineComponent, ref, onMounted } from 'vue';
-import WindowShadeItem from 'src/components/window-shade-item.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { WindowShadeItem },
+  components: { LocationItem },
   setup() {
-    const windowShades = ref<WindowShadeEndpoint[]>([]);
-
+    const locations = ref<LocationEndpoint[]>([]);
     onMounted(async () => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      windowShades.value = (
-        await (await fetch('window-shade-list.json')).json()
-      ).shades as WindowShadeEndpoint[];
+
+      locations.value = (await (
+        await fetch('location-list.json')
+      ).json()) as LocationEndpoint[];
     });
-    return { drawer: ref(false), button: ref(true), windowShades };
+
+    return { drawer:ref(false), button:ref(true), locations };
   },
 });
 </script>

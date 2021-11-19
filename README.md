@@ -12,6 +12,21 @@ yarn
 quasar dev
 ```
 
+### Start the app as PWA
+```bash
+quasar dev -m pwa
+```
+
+### Start the app with Electron
+```bash
+quasar dev -m electron
+```
+
+### Start the app as Browser Extension (BEX)
+```bash
+quasar dev -m bex
+```
+
 ### Lint the files
 ```bash
 yarn run lint
@@ -21,6 +36,8 @@ yarn run lint
 ```bash
 quasar build
 ```
+
+
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
